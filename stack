@@ -31,7 +31,7 @@ class Stack:
             self.top -= 1
     
     def isPrint(self):
-        print("{}".format([d for d in self.stack if d != None]))
+        print("{}".format([d for d in self.stack[::-1] if d != None]))
 
 data = Stack(5)
 data.isPush(1)
