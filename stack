@@ -1,0 +1,48 @@
+class Stack:
+    def __init__(self, maks):
+        self.stack = [None] * maks
+        self.maks = maks
+        self.top = 0
+    
+    def isFull(self):
+        if self.top == self.maks:
+            return True
+        else:
+            return False
+    
+    def isEmpty(self):
+        if self.top == 0:
+            return True
+        else:
+            return False
+    
+    def isPush(self, dt):
+        if self.isFull():
+            print("Data is Full")
+        else:
+            self.stack[self.top] = dt
+            self.top += 1
+    
+    def isPop(self):
+        if self.isEmpty():
+            print("Data is Empty")
+        else:
+            self.stack[self.top - 1] = None
+            self.top -= 1
+    
+    def isPrint(self):
+        print("{}".format([d for d in self.stack if d != None]))
+
+data = Stack(5)
+data.isPush(1)
+data.isPush(2)
+data.isPush(3)
+data.isPush(4)
+data.isPush(5)
+data.isPrint()
+data.isPop()
+data.isPop()
+data.isPop()
+data.isPop()
+data.isPop()
+data.isPrint()
